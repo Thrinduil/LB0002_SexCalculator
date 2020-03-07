@@ -8,14 +8,14 @@
         Title="MainWindow" Height="450" Width="331.658">
     <Grid>
         <TextBlock x:Name="tbkResult" HorizontalAlignment="Left" Margin="30,237,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="157" Width="256"/>
-        <TextBox x:Name="tbxFirstName" HorizontalAlignment="Left" Height="23" Margin="128,92,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="158"/>
+        <TextBox x:Name="tbxFirstName" HorizontalAlignment="Left" Height="23" Margin="128,92,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="158" KeyboardNavigation.TabIndex="0"/>
         <Label x:Name="lblFirstName" Content="Förnamn:" HorizontalAlignment="Left" Margin="30,88,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.162,1.505"/>
-        <Button x:Name="btnAdd" Content="Lägg till!" HorizontalAlignment="Left" Margin="176,199,0,0" VerticalAlignment="Top" Width="110"/>
-        <Button x:Name="btnQuit" Content="Avsluta" HorizontalAlignment="Left" Margin="34,199,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="btnAdd" Content="Lägg till!" HorizontalAlignment="Left" Margin="176,199,0,0" VerticalAlignment="Top" Width="110" KeyboardNavigation.TabIndex="3"/>
+        <Button x:Name="btnQuit" Content="Avsluta" HorizontalAlignment="Left" Margin="34,199,0,0" VerticalAlignment="Top" Width="75" KeyboardNavigation.TabIndex="4"/>
         <Label x:Name="lblInstructions" Content="Ange namn och personnummer:" HorizontalAlignment="Left" Margin="30,40,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.162,1.505" Width="256" FontWeight="Bold" FontSize="16"/>
-        <TextBox x:Name="tbxLastName" HorizontalAlignment="Left" Height="23" Margin="128,123,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="158"/>
+        <TextBox x:Name="tbxLastName" HorizontalAlignment="Left" Height="23" Margin="128,123,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="158" KeyboardNavigation.TabIndex="1"/>
         <Label x:Name="lblLastName" Content="Efternamn:" HorizontalAlignment="Left" Margin="30,119,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.162,1.505"/>
-        <TextBox x:Name="tbxIdNumber" HorizontalAlignment="Left" Height="23" Margin="128,154,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="158"/>
+        <TextBox x:Name="tbxIdNumber" HorizontalAlignment="Left" Height="23" Margin="128,154,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="158" KeyboardNavigation.TabIndex="2"/>
         <Label x:Name="lblIdNumber" Content="Personnummer:" HorizontalAlignment="Left" Margin="30,150,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.162,1.505"/>
 
     </Grid>
