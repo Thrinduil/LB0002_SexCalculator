@@ -29,5 +29,26 @@ namespace SexCalculator
         {
             tbxFirstName.Focus();
         }
+
+        private void BtnAdd_Click(object sender, RoutedEventArgs e)
+        {
+            Person person = new Person(tbxFirstName.Text, tbxLastName.Text, tbxIdNumber.Text);
+
+            tbkResult.Text = $"Förnamn: {person.firstName}\nEfternamn: {person.lastName}\nPersonnummer: {person.idNumber}";
+        }
+    }
+
+    public class Person
+    {
+        public string firstName;
+        public string lastName;
+        public string idNumber;
+
+        public Person(string firstName, string lastName, string idNumber)
+        {
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.idNumber = idNumber;
+        }
     }
 }
