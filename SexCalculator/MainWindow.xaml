@@ -10,8 +10,8 @@
         <TextBlock x:Name="tbkResult" HorizontalAlignment="Left" Margin="30,237,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="157" Width="256"/>
         <TextBox x:Name="tbxFirstName" HorizontalAlignment="Left" Height="23" Margin="128,92,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="158" KeyboardNavigation.TabIndex="0"/>
         <Label x:Name="lblFirstName" Content="Förnamn:" HorizontalAlignment="Left" Margin="30,88,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.162,1.505"/>
-        <Button x:Name="btnAdd" Content="Lägg till!" HorizontalAlignment="Left" Margin="176,199,0,0" VerticalAlignment="Top" Width="110" KeyboardNavigation.TabIndex="3" Click="BtnAdd_Click"/>
-        <Button x:Name="btnQuit" Content="Avsluta" HorizontalAlignment="Left" Margin="34,199,0,0" VerticalAlignment="Top" Width="75" KeyboardNavigation.TabIndex="4" Click="BtnQuit_Click"/>
+        <Button x:Name="btnAdd" Content="Lägg till!" HorizontalAlignment="Left" Margin="176,199,0,0" VerticalAlignment="Top" Width="110" KeyboardNavigation.TabIndex="3" Click="BtnAdd_Click" IsDefault="True"/>
+        <Button x:Name="btnQuit" Content="Avsluta" HorizontalAlignment="Left" Margin="34,199,0,0" VerticalAlignment="Top" Width="75" KeyboardNavigation.TabIndex="4" Click="BtnQuit_Click" IsCancel="True"/>
         <Label x:Name="lblInstructions" Content="Ange namn och personnummer:" HorizontalAlignment="Left" Margin="30,40,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.162,1.505" Width="256" FontWeight="Bold" FontSize="16"/>
         <TextBox x:Name="tbxLastName" HorizontalAlignment="Left" Height="23" Margin="128,123,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="158" KeyboardNavigation.TabIndex="1"/>
         <Label x:Name="lblLastName" Content="Efternamn:" HorizontalAlignment="Left" Margin="30,119,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.162,1.505"/>
