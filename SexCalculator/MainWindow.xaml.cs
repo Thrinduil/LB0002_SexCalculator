@@ -42,9 +42,7 @@ namespace SexCalculator
                 }
 
                 tbkResult.Foreground = Brushes.Black;
-                tbkResult.Text = $"Förnamn: {person.firstName}\nEfternamn: {person.lastName}\nPersonnummer: {person.idNumber}";
-
-
+                tbkResult.Text = $"Förnamn: {person.firstName}\nEfternamn: {person.lastName}\nPersonnummer: {person.idNumber}\nKön: {person.Sex()}";
             }
             catch (Exception ex)
             {
@@ -128,6 +126,15 @@ namespace SexCalculator
                 return true;
             }
             return false;
+        }
+
+        public string Sex()
+        {
+            if(idNumber[8] % 2 == 0)
+            {
+                return "Kvinna";
+            }
+            return "Man";
         }
     }
 }
