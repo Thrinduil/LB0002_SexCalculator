@@ -32,9 +32,17 @@ namespace SexCalculator
 
         private void BtnAdd_Click(object sender, RoutedEventArgs e)
         {
-            Person person = new Person(tbxFirstName.Text, tbxLastName.Text, tbxIdNumber.Text);
-
-            tbkResult.Text = $"Förnamn: {person.firstName}\nEfternamn: {person.lastName}\nPersonnummer: {person.idNumber}";
+            try
+            {
+                Person person = new Person(tbxFirstName.Text, tbxLastName.Text, tbxIdNumber.Text);
+                tbkResult.Foreground = Brushes.Black;
+                tbkResult.Text = $"Förnamn: {person.firstName}\nEfternamn: {person.lastName}\nPersonnummer: {person.idNumber}";
+            }
+            catch (ArgumentException ex)
+            {
+                tbkResult.Foreground = Brushes.Red;
+                tbkResult.Text = ex.Message;
+            }
         }
 
         private void BtnQuit_Click(object sender, RoutedEventArgs e)
@@ -51,6 +59,34 @@ namespace SexCalculator
 
         public Person(string firstName, string lastName, string idNumber)
         {
+            string errorMessage = "";
+
+            if (string.IsNullOrWhiteSpace(firstName))
+            {
+                errorMessage += "Du måste ange förnamn.\n";
+            }
+
+            if (string.IsNullOrWhiteSpace(lastName))
+            {
+                errorMessage += "Du måste ange efternamn.\n";
+            }
+
+            if (string.IsNullOrWhiteSpace(idNumber))
+            {
+                errorMessage += "Du måste ange personnummer.\n";
+            } else if (idNumber.Length != 10)
+            {
+                errorMessage += "Personnumret måste vara 10 siffror.\n";
+            } else if (!idNumber.All(char.IsDigit))
+            {
+                errorMessage += "Personnumret får endast innehålla siffror.\n";
+            }
+
+            if (!string.IsNullOrEmpty(errorMessage))
+            {
+                throw new ArgumentException(errorMessage);
+            }
+
             this.firstName = firstName;
             this.lastName = lastName;
             this.idNumber = idNumber;
