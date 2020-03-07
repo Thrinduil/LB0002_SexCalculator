@@ -35,10 +35,18 @@ namespace SexCalculator
             try
             {
                 Person person = new Person(tbxFirstName.Text, tbxLastName.Text, tbxIdNumber.Text);
+
+                if (!person.IsIdNumberValid())
+                {
+                    throw new Exception("Personnumret är inte giltigt!");
+                }
+
                 tbkResult.Foreground = Brushes.Black;
                 tbkResult.Text = $"Förnamn: {person.firstName}\nEfternamn: {person.lastName}\nPersonnummer: {person.idNumber}";
+
+
             }
-            catch (ArgumentException ex)
+            catch (Exception ex)
             {
                 tbkResult.Foreground = Brushes.Red;
                 tbkResult.Text = ex.Message;
@@ -84,12 +92,42 @@ namespace SexCalculator
 
             if (!string.IsNullOrEmpty(errorMessage))
             {
-                throw new ArgumentException(errorMessage);
+                throw new Exception(errorMessage);
             }
 
             this.firstName = firstName;
             this.lastName = lastName;
             this.idNumber = idNumber;
+        }
+
+        public bool IsIdNumberValid()
+        {
+            string controlString = "";
+            int controlSum = 0;
+
+            for (int i = 0; i < idNumber.Length; i++)
+            {
+                if (i % 2 == 0)
+                {
+                    int digit = int.Parse(idNumber[i].ToString());
+                    controlString += (digit * 2).ToString();
+                }
+                else
+                {
+                    controlString += idNumber[i];
+                }
+            }
+
+            foreach (char digit in controlString)
+            {
+                controlSum += int.Parse(digit.ToString());
+            }
+
+            if (controlSum % 10 == 0)
+            {
+                return true;
+            }
+            return false;
         }
     }
 }
